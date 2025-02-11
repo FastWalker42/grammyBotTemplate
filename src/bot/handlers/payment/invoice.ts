@@ -6,6 +6,6 @@ export default async (ctx: Context) => {
     'desc',
     ctx.message!.from.id.toString(),
     'XTR',
-    [{ label: 'ru', amount: 44 }]
+    [{ label: 'stars', amount: 1 }]
   )
 }

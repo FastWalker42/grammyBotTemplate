@@ -18,10 +18,5 @@ export default async (ctx: Context) => {
   await ctx.reply(T.msg.start(ctx.message?.from.first_name!), {
     reply_markup: T.startKb(last_name!),
   })
-  await ctx.reply(balance.toString())
-  const endTime = Date.now()
-  await ctx.reply(
-    `Время обработки: ${endTime - ctx.message!.date * 1000} мс`
-  )
   console.timeEnd('Request Time')
 }

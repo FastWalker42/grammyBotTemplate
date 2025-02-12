@@ -5,7 +5,6 @@ export const usersTable = sqliteTable('users', {
   user_id: int().notNull().unique(),
   balance: int().notNull().default(0),
   partner_id: int().notNull().default(0),
-  lang_code: text().notNull(),
   mining_time: text().notNull().default(''),
   last_activity: text()
     .notNull()

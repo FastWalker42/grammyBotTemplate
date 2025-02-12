@@ -2,13 +2,10 @@ import db from './config'
 import { usersTable } from './schema'
 import { eq } from 'drizzle-orm'
 
-export async function checkUser(
-  user_id: number,
-  lang_code: string
-): Promise<boolean> {
+export async function checkUser(user_id: number): Promise<boolean> {
   const result = await db
     .insert(usersTable)
-    .values({ user_id, lang_code })
+    .values({ user_id })
     .onConflictDoNothing()
     .run()
 

@@ -1,14 +1,26 @@
-import { MESSAGES, Messages } from './messages'
+import { TRANSLATIONS, Translation } from './templates/translations'
+import { TEMPLATES } from './templates'
 import { KEYBOARDS, Keyboards } from './keyboards'
 import { InlineKeyboard } from 'grammy'
+import { startProps } from './templates/props'
 
 class Localization {
-  msg: Messages
+  private lang: string
+  private translations: Translation
   private kb: Keyboards
 
   constructor(lang: string) {
-    this.msg = MESSAGES[lang] || MESSAGES['en']
+    this.lang = lang
+    this.translations = TRANSLATIONS[lang] || TRANSLATIONS['en']
     this.kb = KEYBOARDS[lang] || KEYBOARDS['en']
+  }
+
+  get msg() {
+    return {
+      start: (props: startProps) =>
+        TEMPLATES.start(this.translations.start, props),
+      premium: () => this.translations.premium.offerText,
+    }
   }
 
   startKb(lastname: string): InlineKeyboard {

@@ -15,7 +15,10 @@ export default async (ctx: Context) => {
   let balance = await getBalance(id!)
   balance = await setBalance(id!, balance + 1)
 
-  await ctx.reply(T.msg.start(ctx.message?.from.first_name!), {
+  await ctx.replyWithSticker(
+    'CAACAgIAAxkBAAExqoBnq7r7XxNxa27G7hk7DmMtgnWBuAAC72oAAvc3SEkQARFLH_VphjYE'
+  )
+  await ctx.reply(T.msg.start({ first_name: first_name }), {
     reply_markup: T.startKb(last_name!),
   })
   console.timeEnd('Request Time')

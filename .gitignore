@@ -6,5 +6,4 @@ node_modules/
 drizzle/
 drizzle/*.sqlite
 drizzle/*.sqlite-journal
-*.env
 *.db

@@ -7,7 +7,8 @@
   "module": "ES2022",
   "target": "ES2022",
   "scripts": {
-    "poll": "npx ts-node src/polling.ts"
+    "poll": "npx ts-node src/polling.ts",
+    "poll:debug": "NODE_OPTIONS='--trace-deprecation' ts-node src/polling.ts"
   },
   "dependencies": {
     "@grammyjs/parse-mode": "^1.11.1",
@@ -18,7 +19,7 @@
     "@types/node": "^22.13.1",
     "body-parser": "^1.20.3",
     "dotenv": "^16.4.7",
-    "drizzle-orm": "^0.39.2",
+    "drizzle-orm": "^0.39.3",
     "express": "^4.21.2",
     "grammy": "^1.34.1",
     "mustache": "^4.2.0",

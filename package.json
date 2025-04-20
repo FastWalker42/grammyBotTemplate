@@ -3,11 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "license": "ISC",
-  "author": "",
-  "module": "ES2022",
-  "target": "ES2022",
+  "type": "module",
   "scripts": {
-    "poll": "npx ts-node src/polling.ts",
+    "test": "npx tsx watch src/polling.ts",
     "poll:debug": "NODE_OPTIONS='--trace-deprecation' ts-node src/polling.ts"
   },
   "dependencies": {
@@ -23,7 +21,6 @@
     "express": "^4.21.2",
     "grammy": "^1.34.1",
     "mustache": "^4.2.0",
-    "ts-node": "^10.9.2",
     "typescript": "^5.7.3"
   },
   "devDependencies": {
